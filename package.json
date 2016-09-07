@@ -1,0 +1,20 @@
+{
+  "name": "v2ex-preact",
+  "version": "0.1.0",
+  "description": "v2ex client built by preact",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/yanni4night/v2ex-preact.git"
+  },
+  "keywords": [
+    "v2ex",
+    "preact"
+  ],
+  "author": "yanni4night@gmail.com",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/yanni4night/v2ex-preact#readme"
+}
