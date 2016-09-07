@@ -27,7 +27,7 @@
     "load-panto-transformers": "^0.1.0",
     "panto": "0.0.33",
     "panto-transformer-babel": "^0.1.6",
-    "panto-transformer-browserify": "^0.1.4",
+    "panto-transformer-browserify": "^0.1.6",
     "panto-transformer-copy": "^0.1.4",
     "panto-transformer-read": "^0.3.3",
     "panto-transformer-sass": "^0.1.0",
@@ -38,10 +38,11 @@
   "dependencies": {
     "normalize.css": "^4.2.0",
     "preact": "^6.0.1",
+    "preact-compat": "^3.0.1",
     "preact-router": "^2.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
-    "redux": "^3.6.0",
-    "redux-react-router": "^1.0.0-beta3"
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.6.0"
   }
 }

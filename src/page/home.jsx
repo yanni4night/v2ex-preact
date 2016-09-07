@@ -10,8 +10,7 @@
   * @since 0.1.0
   */
 'use strict';
-import {h, Component} from 'preact';
-/** @jsx h */
+import React, {Component} from 'react';
 
 export default class Home extends Component {
     render() {

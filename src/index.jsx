@@ -10,26 +10,26 @@
   * @since 0.1.0
   */
 'use strict';
-import Router from 'preact-router';
-import {h, render} from 'preact';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import React from 'react';
+import {render} from 'react-dom';
 import Home from './page/home.jsx';
-//import {Provider, connect} from 'react-redux';
-//import {createStore, combineReducers} from 'redux';
-//import {syncHistoryWithStore, routerReducer} from 'react-router-redux'
-/** @jsx h */
+import {Provider, connect} from 'react-redux';
+import {createStore, combineReducers} from 'redux';
+import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
 
-//const HomePage = connect()(Home);
+const HomePage = connect(state => state)(Home);
 
-/*const store = createStore(combineReducers({
+const store = createStore(combineReducers({
   routing: routerReducer
 }));
 
-const history = syncHistoryWithStore(browserHistory, store);*/
+const history = syncHistoryWithStore(browserHistory, store);
 
-const Main = () => (
-      <Router>
-          <Home path="/"/>
+render((
+<Provider store={store}>
+      <Router history={history}>
+          <Route path="/" component={HomePage}/>
       </Router>
-);
-
-render(<Main/>, document.querySelector('#preact-root'));
+</Provider>
+), document.querySelector('#preact-root'));

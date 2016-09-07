@@ -24,15 +24,17 @@ module.exports = panto => {
     panto.$('src/**/*.jsx').tag('JSX').read().babel({
         extend: '.babelrc',
         isSlient: false
-    })/*.aspect({
-        aspect: file=>console.log(file)
-    })*/.browserify({
+    }).browserify({
         entry: 'src/index.jsx',
         bundle: 'bundle.js',
         process: {
             env: {
                 NODE_ENV: 'production'
             }
+        },
+        aliases: {
+            "react": "preact-compat",
+            "react-dom": "preact-compat"
         }
     }).write();
 
