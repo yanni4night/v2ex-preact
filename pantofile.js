@@ -39,7 +39,7 @@ module.exports = panto => {
     }).write();
 
     panto.$('src/*.html').tag('HTML').copy({flatten: true});
-    panto.$('node_modules/normalize.css/normalize.css').tag('NORMALIZE').copy({
+    panto.$('node_modules/normalize.css/normalize.css', true).tag('NORMALIZE').copy({
         flatten: true
     });
     panto.$('src/index.sass').tag('SASS').read().sass().write({
