@@ -10,7 +10,7 @@
   * @since 0.1.0
   */
 'use strict';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import React from 'react';
 import {render} from 'react-dom';
 import Home from './page/home.jsx';
@@ -24,7 +24,7 @@ const store = createStore(combineReducers({
   routing: routerReducer
 }));
 
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 render((
 <Provider store={store}>
