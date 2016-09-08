@@ -36,16 +36,11 @@
     "time-panto": "^0.2.0"
   },
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "es6-promise": "^3.2.1",
     "express": "^4.14.0",
-    "fetch-ponyfill": "^3.0.0",
-    "isomorphic-fetch": "^2.2.1",
     "node-fetch": "^1.6.0",
     "normalize.css": "^4.2.0",
     "preact": "^6.0.1",
     "preact-compat": "^3.0.1",
-    "preact-router": "^2.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",

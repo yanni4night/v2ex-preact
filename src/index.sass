@@ -9,8 +9,80 @@
   * @version 0.1.0
   * @since 0.1.0
   */
-.a {
-  .b {
-    color: red
-  }
+.f-f {
+  display: flex;
+}
+.f-h {
+  flex-direction: row;
+}
+.f-v {
+  flex-direction: column;
+}
+.f-m {
+  align-items: center;
+}
+.f-c {
+  justify-content: center;
+}
+.f-r {
+  justify-content: flex-end;
+}
+.f-l {
+  justify-content: flex-start;
+}
+.f-j {
+  justify-content: space-between;
+}
+.f-1 {
+  flex: 1;
+}
+.container {
+    .header {
+        a {
+            &.active {
+                text-decoration: underline;
+                background-color:#302E2F;
+            }
+            text-align: center;
+            line-height: 100%;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bolder;
+        }
+        background-color: #171A12;
+        height: 40px;
+    }
+    .content {
+        .topic {
+            &:last-of-type {
+                border-bottom: 0;
+            }
+            .avatar-wrapper {width: 60px;}
+            img.avatar {
+                display: block;
+                width: 60px;
+                height: 60px;
+            }
+            .info {
+                .title {
+                    strong {
+                         white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    font-size: 16px;
+                }
+                .desc {
+                    font-size: 12px;
+                }
+                overflow: hidden;
+                height: 60px;
+                margin-left: 10px;
+            }
+            border-bottom: 1px solid #ccc;
+            height: 60px;
+            padding: 5px 10px;
+        }
+        padding: 0 5px;
+    }
 }

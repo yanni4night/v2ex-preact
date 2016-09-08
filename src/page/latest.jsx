@@ -11,13 +11,15 @@
   */
 'use strict';
 import React, {Component} from 'react';
+import Topic from '../component/topic.jsx';
 
 export default class Latest extends Component {
     componentDidMount() {
         this.props.actions.loadLatest();
     }
     render() {
-        console.log(this.props.latest);
-        return (<h1>Latest</h1>);
+        return (<div>{this.props.latest.map(topic => {
+                    return <Topic {...topic} key={topic.id}/>;
+                })}</div>);
     }
 }
