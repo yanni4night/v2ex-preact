@@ -17,9 +17,12 @@ export default class Latest extends Component {
     componentDidMount() {
         this.props.actions.loadLatest();
     }
+    onClick(topic) {
+      this.props.actions.toTopic(topic);
+    }
     render() {
         return (<div>{this.props.latest.map(topic => {
-                    return <Topic {...topic} key={topic.id}/>;
+                    return <Topic {...topic} onClick={this.onClick.bind(this)} key={topic.id}/>;
                 })}</div>);
     }
 }

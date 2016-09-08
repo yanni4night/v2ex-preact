@@ -11,13 +11,9 @@
  */
 'use strict';
 import * as ACTION_TYPES from '../constant/action-types';
-//import es6Promise from 'es6-promise';
-//import 'isomorphic-fetch';
-//es6Promise.polyfill();
-//import Promise from 'bluebird';
-//import fetchPonyfill from 'fetch-ponyfill';
-
-//const {fetch, Request, Response, Headers} = fetchPonyfill(Promise);
+import {
+    push
+} from 'react-router-redux';
 
 export const loadHot = () => {
     return (dispatch, getState) => {
@@ -60,5 +56,16 @@ export const loadLatest = () => {
                 });
             });
         }
+    };
+};
+
+export const toIndex = () => push('/');
+export const toTopic = topic => {
+    return (dispatch) => {
+        dispatch({
+            type: ACTION_TYPES.ACTION_TO_TOPIC,
+            payload: topic
+        });
+        dispatch(push('/topic/' + topic.id));
     };
 };

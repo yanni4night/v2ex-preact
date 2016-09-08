@@ -15,11 +15,12 @@ import React from 'react';
 import {render} from 'react-dom';
 import Latest from './page/latest.jsx';
 import Hot from './page/hot.jsx';
+import Topic from './page/topic.jsx';
 import Container from './page/container.jsx';
 import {Provider, connect} from 'react-redux';
 import {createStore, combineReducers, bindActionCreators, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
+import {syncHistoryWithStore, routerReducer, routerMiddleware} from 'react-router-redux';
 import * as reducers from './reducer/';
 import * as actions from './action/';
 
@@ -33,12 +34,13 @@ function mapDispatchToProps(dispatch){
 const ContainerPage = connect((state, ownProps) => ({current: ownProps.location.pathname}), mapDispatchToProps)(Container);
 const LatestPage = connect(state => ({latest: state.latest}), mapDispatchToProps)(Latest);
 const HotPage = connect(state => ({hot: state.hot}), mapDispatchToProps)(Hot);
+const TopicPage = connect(state => ({topic: state.topic}), mapDispatchToProps)(Topic);
 
 // Redux store
 const store = createStore(combineReducers({
     ...reducers,
     routing: routerReducer
-}), applyMiddleware(thunk));
+}), applyMiddleware(thunk, routerMiddleware(hashHistory)));
 
 const history = syncHistoryWithStore(hashHistory, store);
 
@@ -47,8 +49,10 @@ render((
       <Router history={history}>
           <Route path="/" component={ContainerPage}>
             <IndexRoute component={LatestPage}/>
+            <Route path="latest" component={LatestPage}/>
             <Route path="hot" component={HotPage}/>
           </Route>
+          <Route path="/topic/:topic_id" component={TopicPage}></Route>
       </Router>
 </Provider>
 ), document.querySelector('#preact-root'));

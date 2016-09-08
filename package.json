@@ -25,7 +25,7 @@
     "eslint": "^3.4.0",
     "eslint-plugin-react": "^6.2.0",
     "load-panto-transformers": "^0.1.0",
-    "panto": "0.0.33",
+    "panto": "^0.1.0-alpha",
     "panto-transformer-babel": "^0.1.6",
     "panto-transformer-browserify": "^0.1.6",
     "panto-transformer-copy": "^0.1.4",
