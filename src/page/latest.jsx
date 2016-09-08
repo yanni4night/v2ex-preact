@@ -1,6 +1,6 @@
 /**
   * Copyright (C) 2016 yanni4night.com
-  * home.jsx
+  * latest.jsx
   *
   * changelog
   * 2016-09-07[22:08:48]:revised
@@ -12,8 +12,12 @@
 'use strict';
 import React, {Component} from 'react';
 
-export default class Home extends Component {
+export default class Latest extends Component {
+    componentDidMount() {
+        this.props.actions.loadLatest();
+    }
     render() {
-        return (<h1>Hello</h1>);
+        console.log(this.props.latest);
+        return (<h1>Latest</h1>);
     }
 }

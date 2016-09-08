@@ -21,7 +21,7 @@ module.exports = panto => {
         output: 'dist'
     });
 
-    panto.$('src/**/*.jsx').tag('JSX').read().babel({
+    panto.$('src/**/*.{js,jsx}').tag('JSX').read().babel({
         extend: '.babelrc',
         isSlient: false
     }).browserify({

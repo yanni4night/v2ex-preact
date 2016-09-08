@@ -13,23 +13,35 @@
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import React from 'react';
 import {render} from 'react-dom';
-import Home from './page/home.jsx';
+import Latest from './page/latest.jsx';
 import {Provider, connect} from 'react-redux';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, bindActionCreators, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import {syncHistoryWithStore, routerReducer} from 'react-router-redux';
+import * as reducers from './reducer/';
+import * as actions from './action/';
 
-const HomePage = connect(state => state)(Home);
+const LatestPage = connect(function mapStateToProps(state){
+    return {
+        latest: state.latest
+    }
+}, function mapDispatchToProps(dispatch){
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    };
+})(Latest);
 
 const store = createStore(combineReducers({
-  routing: routerReducer
-}));
+    ...reducers,
+    routing: routerReducer
+}), applyMiddleware(thunk));
 
 const history = syncHistoryWithStore(hashHistory, store);
 
 render((
 <Provider store={store}>
       <Router history={history}>
-          <Route path="/" component={HomePage}/>
+          <Route path="/" component={LatestPage}/>
       </Router>
 </Provider>
 ), document.querySelector('#preact-root'));
