@@ -11,13 +11,12 @@
   */
 'use strict';
 import React, {Component} from 'react';
-import {Link} from 'react-router';
 
 export default class Topic extends Component {
     render() {
-        const {member, id, title, onClick} = this.props;
+        const {member, title, onClick} = this.props;
         const {username, avatar_large} = member;
-        return (<div className="topic f-f f-h f-m" onClick={e=>onClick(this.props)}>
+        return (<div className="topic-item f-f f-h f-m" onClick={()=>onClick(this.props)}>
             <div className="avatar-wrapper">
                 <img className="avatar" src={avatar_large} alt={username}/>
             </div>

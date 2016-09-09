@@ -18,7 +18,7 @@ export default class Hot extends Component {
         this.props.actions.loadHot();
     }
     onClick(topic) {
-      this.props.actions.toTopic(topic);
+        this.props.actions.toTopic(topic);
     }
     render() {
          return (<div>{this.props.hot.map(topic => {

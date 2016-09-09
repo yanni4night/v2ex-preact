@@ -13,16 +13,16 @@
 import React, {Component} from 'react';
 
 export default class Topic extends Component {
-    componentDidMount() {
-        //this.props.actions.loadLatest();
-    }
     render() {
-
         const {topic} = this.props;
         const {content_rendered, title} = topic;
-        if (!content_rendered) {
+
+        if (!title) {
             this.props.actions.toIndex();
         }
-        return (<article className="topic">{content_rendered}</article>);
+        return (<div class="topic">
+            <h1 class="title">{title}</h1>
+            <article className="article" dangerouslySetInnerHTML={{__html:content_rendered}}></article>
+        </div>);
     }
 }

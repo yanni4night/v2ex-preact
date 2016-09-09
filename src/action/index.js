@@ -11,9 +11,11 @@
  */
 'use strict';
 import * as ACTION_TYPES from '../constant/action-types';
-import {
-    push
-} from 'react-router-redux';
+import {push, goBack} from 'react-router-redux';
+import fetchPonyfill from 'fetch-ponyfill';
+import Promise from 'bluebird';
+
+const {fetch} = fetchPonyfill(Promise);
 
 export const loadHot = () => {
     return (dispatch, getState) => {
@@ -60,8 +62,9 @@ export const loadLatest = () => {
 };
 
 export const toIndex = () => push('/');
+
 export const toTopic = topic => {
-    return (dispatch) => {
+    return dispatch => {
         dispatch({
             type: ACTION_TYPES.ACTION_TO_TOPIC,
             payload: topic
@@ -69,3 +72,5 @@ export const toTopic = topic => {
         dispatch(push('/topic/' + topic.id));
     };
 };
+
+export const back = () => goBack();

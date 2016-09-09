@@ -4,7 +4,7 @@
   "description": "v2ex client built by preact",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/eslint --ext .jsx,.js src"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,9 @@
     "time-panto": "^0.2.0"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
     "express": "^4.14.0",
+    "fetch-ponyfill": "^3.0.0",
     "node-fetch": "^1.6.0",
     "normalize.css": "^4.2.0",
     "preact": "^6.0.1",
