@@ -1,5 +1,5 @@
 # v2ex-preact
-[![Build with Panto][build-image]][build-url]
+[![Build with Panto][build-image]][build-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url]
 
 [v2ex](https://www.v2ex.com) client built by [preact](https://preactjs.com/).
 
@@ -12,3 +12,7 @@ Found bug:
 
 [build-image]:https://img.shields.io/badge/build%20with-panto-yellowgreen.svg
 [build-url]:http://pantojs.xyz/
+[david-dm-url]:https://david-dm.org/yanni4night/v2ex-preact
+[david-dm-image]:https://david-dm.org/yanni4night/v2ex-preact.svg
+[david-dm-dev-url]:https://david-dm.org/yanni4night/v2ex-preact#type=dev
+[david-dm-dev-image]:https://david-dm.org/yanni4night/v2ex-preact/dev-status.svg
